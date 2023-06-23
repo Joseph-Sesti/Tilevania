@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ladder
   - Water
   - UI
   - Ground
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 2676378137
+    locked: 0
+  - name: Ladder
+    uniqueID: 2747916333
     locked: 0
   - name: Platforms
     uniqueID: 3459489387
