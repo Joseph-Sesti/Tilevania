@@ -19361,7 +19361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3070827625123026029, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: m_GravityScale
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3070827625123026029, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: m_CollisionDetection
