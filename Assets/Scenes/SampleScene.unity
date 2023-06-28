@@ -19349,7 +19349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 380228530447483529, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: jumpSpeed
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 380228530447483529, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: climbSpeed
@@ -19361,7 +19361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3070827625123026029, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: m_GravityScale
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3070827625123026029, guid: 53272397897a5194c950a2e3c5565a31, type: 3}
       propertyPath: m_CollisionDetection
