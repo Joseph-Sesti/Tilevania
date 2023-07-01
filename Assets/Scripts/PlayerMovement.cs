@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
     }
 
     void OnJump(InputValue value)
@@ -74,11 +73,13 @@ public class PlayerMovement : MonoBehaviour
         if(!myCollider.IsTouchingLayers(8))
         {
             myRigidbody.gravityScale = startingGravity;
+            myAnimator.SetBool("isClimbing", false);
             return;
         }
         Vector2 climbVelocity = new Vector2 (myRigidbody.velocity.x, moveInput.y * climbSpeed);
         myRigidbody.velocity = climbVelocity;
         myRigidbody.gravityScale = 0f;
+        
         bool playerHasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
     }
