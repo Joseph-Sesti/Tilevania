@@ -9,7 +9,9 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
-    Collider2D myCollider;
+    CapsuleCollider2D myCollider;
+    BoxCollider2D playerFeet;
+
 
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
@@ -38,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        myCollider = GetComponent<Collider2D>();
+        playerFeet = GetComponent<BoxCollider2D>();
         Debug.Log(myCollider.IsTouchingLayers(8));
 
-        if (value.isPressed && myCollider.IsTouchingLayers(64))
+        if (value.isPressed && playerFeet.IsTouchingLayers(64))
         {
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ClimbLadder()
     {
-        myCollider = GetComponent<Collider2D>();
+        myCollider = GetComponent<CapsuleCollider2D>();
 
         if(!myCollider.IsTouchingLayers(8))
         {
