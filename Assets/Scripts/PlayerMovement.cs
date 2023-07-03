@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D myCollider;
     BoxCollider2D playerFeet;
 
-
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
