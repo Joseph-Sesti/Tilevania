@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         startingGravity = playerBody.gravityScale;
+        //Debug.Log(myCollider.enabled);
     }
 
     void Update()
@@ -45,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isAlive) { return; }
         playerFeet = GetComponent<BoxCollider2D>();
-        Debug.Log(myCollider.IsTouchingLayers(8));
 
         if (value.isPressed && playerFeet.IsTouchingLayers(64))
         {
@@ -92,9 +92,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
+        playerFeet = GetComponent<BoxCollider2D>();
         if (playerBody.IsTouchingLayers(2048))
         {
             isAlive = false;
+            myAnimator.SetTrigger("Death");
+            playerBody.velocity += new Vector2(0f, 30f);
+            playerBody.gravityScale = 0f;
+            myCollider.enabled = false;
+            playerFeet.enabled = false;
         }
     }
 }
