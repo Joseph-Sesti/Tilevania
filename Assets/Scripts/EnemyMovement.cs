@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    Rigidbody2D myRigidbody;
+    Rigidbody2D enemyBody;
     Animator myAnimator;
     BoxCollider2D wallDetection;
     [SerializeField] float moveSpeed = 1f;
 
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
+        enemyBody = GetComponent<Rigidbody2D>();
         Debug.Log(transform.rotation.x);
         //Debug.Log(transform.rotation.y);
         //Debug.Log(transform.rotation.z);
@@ -21,12 +21,12 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        myRigidbody.velocity = new Vector2 (moveSpeed, 0f);
+        enemyBody.velocity = new Vector2 (moveSpeed, 0f);
     }
 
     void FlipEnemy()
     {
-        transform.localScale = new Vector2 (-(Mathf.Sign(myRigidbody.velocity.x)), 1f);
+        transform.localScale = new Vector2 (-(Mathf.Sign(enemyBody.velocity.x)), 1f);
     }
     
     void OnTriggerExit2D(Collider2D other)
