@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isAlive) { return; }
         playerFeet = GetComponent<BoxCollider2D>();
 
-        if (value.isPressed && playerFeet.IsTouchingLayers(64))
+        if (value.isPressed && playerFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             playerBody.velocity += new Vector2(0f, jumpSpeed);
         }
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         myCollider = GetComponent<CapsuleCollider2D>();
 
-        if(!myCollider.IsTouchingLayers(8))
+        if(!myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
             playerBody.gravityScale = startingGravity;
             myAnimator.SetBool("isClimbing", false);
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     void Die()
     {
         playerFeet = GetComponent<BoxCollider2D>();
-        if (playerBody.IsTouchingLayers(2048))
+        if (playerBody.IsTouchingLayers(LayerMask.GetMask("Enemies", "Spikes")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Death");
