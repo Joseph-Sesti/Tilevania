@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     CapsuleCollider2D myCollider;
     BoxCollider2D playerFeet;
+    [SerializeField] Transform Gun;
+    [SerializeField] GameObject Bullet;
 
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
@@ -24,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         startingGravity = playerBody.gravityScale;
-        //Debug.Log(myCollider.enabled);
     }
 
     void Update()
@@ -51,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity += new Vector2(0f, jumpSpeed);
         }
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) { return; }
+        Instantiate(Bullet, Gun.position, transform.rotation);
     }
 
     void Run()
@@ -103,4 +110,5 @@ public class PlayerMovement : MonoBehaviour
             playerFeet.enabled = false;
         }
     }
+    
 }
