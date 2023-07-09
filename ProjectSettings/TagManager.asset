@@ -18,7 +18,7 @@ TagManager:
   - Bouncing
   - Enemies
   - Spikes
-  - 
+  - Bullets
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: Spikes
     uniqueID: 3361800201
+    locked: 0
+  - name: Bullets
+    uniqueID: 813156199
     locked: 0
   - name: Player
     uniqueID: 1832619341
