@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
         xSpeed = player.transform.localScale.x * bulletSpeed;
         bulletBody.velocity = new Vector2 (xSpeed, 0f);
+        transform.localScale = new Vector2 (Mathf.Sign(player.transform.localScale.x), 1f);
     }
 
     void Update()
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D other)
