@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemyBody = GetComponent<Rigidbody2D>();
-        Debug.Log(transform.rotation);
     }
 
     void Update()
