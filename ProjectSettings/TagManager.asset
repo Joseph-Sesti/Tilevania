@@ -20,7 +20,7 @@ TagManager:
   - Enemies
   - Spikes
   - Bullets
-  - 
+  - Level Exit
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 3459489387
+    locked: 0
+  - name: Level Exit
+    uniqueID: 1572171163
     locked: 0
   - name: Enemies
     uniqueID: 2182053499
