@@ -57,6 +57,9 @@ TagManager:
   - name: Level Exit
     uniqueID: 1572171163
     locked: 0
+  - name: Pickups
+    uniqueID: 3140793869
+    locked: 0
   - name: Enemies
     uniqueID: 2182053499
     locked: 0
