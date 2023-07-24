@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
             playerBody.gravityScale = 0f;
             myCollider.enabled = false;
             playerFeet.enabled = false;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
     
